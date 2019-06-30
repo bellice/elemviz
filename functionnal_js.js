@@ -4,9 +4,9 @@
 
 
 
-
-
-let identity = (value) => value;
-
-identity(2)
-console.log(identity(5))
+new Vue({
+    el: "#app",
+    data: {
+      message: "Hello Vue.js!"
+    }
+  })
