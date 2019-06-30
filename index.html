@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <title>test</title>
-
-
+<script src="lib/vue.min.js"></script>
 </head>
 <body id="home">
 
@@ -14,11 +13,26 @@
     <p>{{ message }}</p>
 </div>
 
-<p>content</p>
+
+<div id="app-2">
+    <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+    </span>
+</div>
+
+<div id="app-3">
+    <span v-if="seen">Now you see me</span>
+    <p v-if="seen">Ceci est un message Caché pour Anaïs</p>
+</div>
 
 
-<script src="https://unpkg.com/vue"></script>
-<script src="functionnal_js.js"></script>
+
+
+
+
+<script src="lib/d3.min.js"></script>
+<script src="lib/topojson.min.js"></script>
+<script src="index.js"></script>
 <script src="autre_script.js"></script>
 </body>
 </html>
