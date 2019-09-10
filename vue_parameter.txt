@@ -1,0 +1,10 @@
+-- Mode développement --
+
+# Installer vue via npm
+npm install vue
+
+# Prendre le fichier vue.js dans le répertoire node_modules
+
+# Installer l'extension vue devtools pour firefox et pour chrome
+
+
