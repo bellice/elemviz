@@ -1,5 +1,17 @@
-let shoppingList = new Vue({
-    el : "#shopping-list",
+// Vue.js Fundamental
+
+
+let shoppingList1 = new Vue({
+    el: "#shopping-list1",
+    data: {
+        header : "Vue est fantastique!"
+    }
+})
+
+//  Vue.js Template Syntax And Expressions 
+
+let shoppingList2 = new Vue({
+    el : "#shopping-list2",
     data : {
         state : "default",
         header : "Liste de courses".toLocaleUpperCase(),
@@ -9,7 +21,7 @@ let shoppingList = new Vue({
             // "3 sauces tomates",
             // "1 bouquet de basilic"
     ]
-    },
+    }, 
     methods: {
         saveItem: function(){
             this.items.push(this.newItem);
