@@ -4,39 +4,116 @@
 <meta charset="utf-8" />
 <title>test</title>
 <script src="lib/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body id="home">
 
+<h1>Get Started with Vue.js</h2>
 
-
+<h2>[1] Vue.js Fundamental</h2>
 <div id="shopping-list1">
-    <h1>{{ header }}</h1>
+    <h3>{{ msg }}</h3>
+    <input type="text" v-model="msg">
 </div>
 
-
-
+<h2>[2] Vue.js Templace Syntax And Expressions</h2>
 <div id="shopping-list2">
-    <div class = "header">
-        <h1>{{ header }}</h1>
-        <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Ajouter un élément</button>
-        <button v-else class="btn btn-cancel" @click="changeState('default')">Annuler</button>
-    </div>
-    <div v-if="state === 'edit'" class="add-item-form">
-    <input v-model="newItem" type="text" placeholder="Ajouter un élément" @keyup.enter="saveItem">
-    <button class="btn btn-primary" @click="saveItem">Sauver l'item</button>
-    </div>
+    <h3>{{ msg.toLocaleUpperCase() }}</h3>
+    <input type="text" v-model="msg">
+</div>
+
+<h2>[3] List Rendering</h2>
+<div id="shopping-list3">
+    <h3>{{ msg.toLocaleUpperCase() }}</h3>
     <ul>
-        <p v-if="items.length === 0">WAOUH ! Aucun élément !</p>
-        <li v-for="item in items">{{ item }}</li>
+        <li v-for= "item in items">{{ item }}</li>
     </ul>
 </div>
 
+<h2>[4] User Inputs & Vue Devtools</h2>
+<div id="shopping-list4">
+    <h3>{{ msg.toLocaleUpperCase() }}</h3>
+    <input type="text" v-model="newItem" placeholder="Ajouter un programme">
+    <ul>
+        <li v-for= "item in items">{{ item }}</li>
+    </ul>
+</div>
+
+<h2>[5] User Events</h2>
+<div id="shopping-list5">
+    <h3>{{ msg.toLocaleUpperCase() }}</h3>
+    <input type="text" v-model="newItem" placeholder="Ajouter un programme" @keyup.enter="items.push(newItem)">
+    <button class="btn btn-primary" @click="items.push(newItem)">Ok</button>
+    <ul>
+        <li v-for= "item in items">{{ item }}</li>
+    </ul>
+</div>
+
+<h2>[6] Vue Methods</h2>
+<div id="shopping-list6">
+    <h3>{{ msg.toLocaleUpperCase() }}</h3>
+    <input type="text" v-model="newItem" placeholder="Ajouter un programme" @keyup.enter="saveItem">
+    <button class="btn btn-primary" @click="saveItem">Ok</button>
+    <ul>
+        <li v-for= "item in items">{{ item }}</li>
+    </ul>
+</div>
+
+<h2>[7] Conditional Rendering</h2>
+<div id="shopping-list7">
+    <div class="header">
+      <h3>{{ msg.toLocaleUpperCase() }}</h3>
+        <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Ajouter un programme</button>
+        <button v-else class="btn btn-cancel" @click="changeState('default')">Annuler</button>
+    </div>
+    <div v-if="state === 'edit'" class="add-item-form">
+        <input type="text" v-model="newItem" placeholder="Ajouter un programme" @keyup.enter="saveItem">
+        <button class="btn btn-primary" @click="saveItem">Ok</button>
+    </div>
+        <ul>
+            <li v-for= "item in items">{{ item }}</li>
+        </ul>
+        <p v-if="items.length === 0">Aucun programme de l'Agence enregistré</p>
+</div>
+
+
+<h2>[8] Attribute Bindings</h2>
+<div id="shopping-list8">
+    <div class="header">
+      <h3>{{ msg.toLocaleUpperCase() }}</h3>
+        <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Ajouter un programme</button>
+        <button v-else class="btn btn-cancel" @click="changeState('default')">Annuler</button>
+    </div>
+    <div v-if="state === 'edit'" class="add-item-form">
+        <input type="text" v-model="newItem" placeholder="Ajouter un programme" @keyup.enter="saveItem">
+        <button class="btn btn-primary" :disabled="newItem.length===0" @click="saveItem">Ok</button>
+    </div>
+    <a :href="newItem" target="_blank>">Lien dynamique</a>
+        <ul>
+            <li v-for= "item in items">{{ item }}</li>
+        </ul>
+        <p v-if="items.length === 0">Aucun programme de l'Agence enregistré</p>
+</div>
 
 
 
-
-
-
+<h2>[9] Dynamic Classes</h2>
+<div id="shopping-list9">
+    <div class="header">
+      <h3>{{ msg.toLocaleUpperCase() }}</h3>
+        <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Ajouter un programme</button>
+        <button v-else class="btn btn-cancel" @click="changeState('default')">Annuler</button>
+    </div>
+    <div v-if="state === 'edit'" class="add-item-form">
+        <input type="text" v-model="newItem" placeholder="Ajouter un programme" @keyup.enter="saveItem">
+        <button class="btn btn-primary" :disabled="newItem.length===0" @click="saveItem">Ok</button>
+    </div>
+    <a :href="newItem" target="_blank>">Lien dynamique</a>
+        <ul>
+            <li v-for= "item in items" :class="{strikeout:item.service, priority:item.hightPriority}" @click="toggleService(item)">{{ item.label }}</li>
+        </ul>
+        <p v-if="items.length === 0">Aucun programme de l'Agence enregistré</p>
+</div>
 
 <script src="vueschool.js"></script>
 <script src="autre_script.js"></script>
