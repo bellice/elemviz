@@ -115,7 +115,28 @@
         <p v-if="items.length === 0">Aucun programme de l'Agence enregistré</p>
 </div>
 
-<script src="vueschool.js"></script>
+
+
+<h2>[10] Computed Properties</h2>
+<div id="shopping-list10">
+    <div class="header">
+      <h3>{{ msg.toLocaleUpperCase() }}</h3>
+        <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Ajouter un programme</button>
+        <button v-else class="btn btn-cancel" @click="changeState('default')">Annuler</button>
+    </div>
+    <div v-if="state === 'edit'" class="add-item-form">
+        <input type="text" v-model="newItem" placeholder="Ajouter un programme" @keyup.enter="saveItem">
+        <button class="btn btn-primary" :disabled="newItem.length===0" @click="saveItem">Ok</button>
+    </div>
+    <a :href="newItem" target="_blank>">Lien dynamique</a>
+        <ul>
+            <li v-for= "item in reversedItems" :class="{strikeout:item.service, priority:item.hightPriority}" @click="toggleService(item)">{{ item.label }}</li>
+        </ul>
+        <p v-if="items.length === 0">Aucun programme de l'Agence enregistré</p>
+</div>
+
+
+<script src="vuejs_fundamentals.js"></script>
 <script src="autre_script.js"></script>
 </body>
 

@@ -6,72 +6,15 @@
 <script src="lib/vue.min.js"></script>
 </head>
 
-<a href="vueschool.html">Vue School</a>
+<ul>
+    <li><a href="vuejs_fundamentals.html">Vue JS Fundamentals</a></li>
+    <li><a href="javascript_testing_fundamentals.html">Javascript Testing Fundamentals</a></li>
+</ul>
+
 
 
 <body id="home">
 
-
-<h3> app-1</h3>
-<div id="app-1">
-    <p>{{ message }}</p>
-</div>
-
-<h3>app-2</h3>
-<div id="app-2">
-    <span v-bind:title="message">
-        Hover your mouse over me for a few seconds to see my dynamically bound title!
-    </span>
-</div>
-
-<h3>app-3</h3>
-<div id="app-3">
-    <span v-if="seen">Now you see me</span>
-    <p v-if="seen">Ceci est un message Caché pour Anaïs</p>
-</div>
-
-
-<h3>app-4</h3>
-<div id="app-4">
-    <ol>
-        <li v-for="todo in todos">
-            {{ todo.text }}
-        </li>
-    </ol>
-</div>
-
-<h3>app-5</h3>
-<div id="app-5">
-    <p>{{message}}</p>
-    <button v-on:click="reverseMessage">Message retourné</button>
-</div>
-
-
-<h3>app-6</h3>
-<div id="app-6">
-    <p>{{ message }}</p>
-    <input v-model="message">
-</div>
-
-<h3>app-7</h3>
-
-<div id="app-7">
-    <ol>
-        <!-- Crée une instance du composant todo-list-->
-        <todo-item
-            v-for="item in groceryList"
-            v-bind:todo="item"
-            v-bind:key="item.id"
-        ></todo-item>
-    </ol>
-</div>
-
-<h3>app-8</h3>
-
-<div id="app-8">
-    <p>Message original : "{{ message }}"</p>
-    <p>Message inversé calculé : "{{ reversedMessage }}"</p>
-</div>
 
 
 

@@ -225,3 +225,64 @@ let shoppingList9 = new Vue({
         }
     }
 })
+
+
+
+
+// #10 Computed Properties
+let shoppingList10 = new Vue({
+    el: "#shopping-list10",
+    data: {
+        state: "default",
+        msg: "Liste des programmes",
+        newItem: "",
+        items: [
+            {
+                label: "France Services",
+                service: false,
+                hightPriority: true,
+            },
+            {
+                label: "Territoire d'industrie",
+                service: true,
+                hightPriority: false,
+            },
+            {
+                label: "Action coeur de ville",
+                service: true,
+                hightPriority: false,
+            },
+            {
+                label: "France numérique",
+                service: false,
+                hightPriority: true,
+            },
+            {
+                label: "Petites centralités",
+                service: false,
+                hightPriority: false,
+            },
+        ]
+    },
+    computed: {
+        reversedItems(){
+            return this.items.slice(0).reverse();
+        }
+    },
+    methods: {
+        saveItem: function(){
+            this.items.push({
+                label: this.newItem,
+                service: false,
+            },);
+            this.newItem = "";
+        },
+        changeState: function(newState){
+            this.state = newState;
+            this.newItem = "";
+        },
+        toggleService: function(item){
+            item.service = !item.service;
+        }
+    }
+})
