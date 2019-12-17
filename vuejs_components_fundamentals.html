@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>test</title>
+<script src="lib/vue.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body id="home">
+
+
+
+<h2>Introduction to components</h2>
+<div id="app1">
+
+<click-counter1></click-counter1>
+<click-counter1></click-counter1>
+<click-counter1></click-counter1>
+<click-counter1></click-counter1>
+</div>
+
+
+<h2>Components template</h2>
+    
+<div id="app2">
+
+    <click-counter2></click-counter2>
+    <click-counter2></click-counter2>
+    <click-counter2></click-counter2>
+    <click-counter2></click-counter2>
+    </div>
+
+
+<script type="text/x-template" id="click-counter-template">
+    <div>
+        <p> Le compteur est :</p>
+        <button @click="count++">{{ count }}</button>
+    </div>
+</script>
+
+
+<h2>Reusable components with props</h2>
+    
+<div id="app3">
+
+<div class="plans">
+    <plan v-for="plan in plans" :name="plan"></plan>
+</div>
+
+
+</div>
+
+<script type="text/x-template" id="plan-template">
+    <div class="plan">
+        <div class="description">
+            <span class="title">
+                {{ name }}
+            </span>
+        </div>
+    </div>
+</script>
+
+    
+
+
+
+
+
+<script src="vuejs_components_fundamentals.js"></script>
+<script src="autre_script.js"></script>
+</body>
+
+</html>
